@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/lib/index",
-  "types":"dist/lib/index",
+  "types": "dist/lib/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js"
   },
@@ -21,10 +21,18 @@
   },
   "homepage": "https://github.com/baijia-wei/frank-text#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@types/jest": "^26.0.20",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-test-renderer": "^17.0.0",
+    "babel-jest": "^26.6.3",
     "cross-env": "^7.0.3",
     "html-webpack-plugin": "3.2.0",
+    "jest": "^26.6.3",
+    "react-test-renderer": "^17.0.1",
+    "ts-jest": "^26.4.4",
     "typescript": "^4.1.3",
     "webpack": "4.29.6",
     "webpack-cli": "3.2.3"
