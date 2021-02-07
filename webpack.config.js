@@ -1,5 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: {
         index: './lib/__tests__/index.tsx'
@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
-        library: 'REACT-ui',
+        library: 'react-ui',
         libraryTarget: 'umd',
     },
     module: {
@@ -21,6 +21,10 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: 'svg-sprite-loader'
+            }
+            , {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
