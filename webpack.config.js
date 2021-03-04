@@ -1,5 +1,5 @@
-const path = require('path')
 
+const path = require('path')
 module.exports = {
     entry: {
         index: './lib/index.tsx'
@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
-        library: 'react-ui',
+        library: 'FUI',
         libraryTarget: 'umd',
     },
     module: {
@@ -20,9 +20,9 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                loader: 'svg-sprite-loader'
-            }
-            , {
+                loader: 'svg-sprite-loader',
+            },
+            {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
             }

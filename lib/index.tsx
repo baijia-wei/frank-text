@@ -1,14 +1,4 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
-import Icon from './icon/icon';
 
-const fn: React.MouseEventHandler = () => {
+export {default as Icon} from './icon/icon';
 
-};
-
-ReactDOM.render(<div>
-    <Icon name="qq"
-          onClick={fn}
-
-    />
-</div>, document.querySelector('#root'));
+import './index.scss';

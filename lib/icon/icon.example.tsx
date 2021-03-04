@@ -1,10 +1,14 @@
 import React from 'react';
-import Icon from './icon';
+import Icon from "./icon";
+
 
 const IconExample: React.FunctionComponent = () => {
     return (
         <div>
-            <Icon name="alipay"/>
+
+            <Icon name="qq"></Icon>
+            <Icon name="baidu"></Icon>
+            <Icon name="wechal"></Icon>
 
         </div>
     );
