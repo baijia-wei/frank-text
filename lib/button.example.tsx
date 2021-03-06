@@ -4,7 +4,7 @@ const ButtonExample: React.FunctionComponent = () => {
     return (
         <div>
             <Buttonss >
-                按钮默认
+               信息按钮
             </Buttonss>
             <Buttonss type="red">
               按钮紅

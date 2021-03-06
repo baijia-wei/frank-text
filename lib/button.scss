@@ -1,27 +1,28 @@
 .fui-button {
   min-width: 4em;
-  height: 2em;
-  color: #000000;
+  height: 2.1em;
+  color: #ffffff;
   background: #1890ff;
+  outline: 0;
   border: none;
 
 }
 .fui-button.red{
   min-width: 4em;
-  height: 2em;
-   color: #000000;
-  background: red;
+  height: 2.1em;
+   color: #ffffff;
+  background: #34a853;
 }
 .fui-button.blue{
   min-width: 4em;
-  height: 2em;
-  background: blue;
-   color: #000000;
+  height:2.1em;
+  background: #ffa400;
+   color: #ffffff;
 }
 
 .fui-button.yellow{
    min-width: 4em;
-   height: 2em;
-   background: yellow;
-   color: #000000;
+   height: 2.1em;
+   background: red;
+   color: #ffffff
  }
