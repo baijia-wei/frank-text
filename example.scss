@@ -37,12 +37,18 @@ body {
 .site-aside {
   border-right: 1px solid #EEEEEE;
   margin-right: 16px;
+  .site-aside-zhanzu{
+    padding-left: 14px;
+  }
+
+
   h2 {
     padding: $padding;
     font-size: 18px;
   }
   ul {
     min-width: 12em;
+    font-size: 14px;
     > li {
       a {
         color: #333;
@@ -69,3 +75,19 @@ body {
 .example {
   padding: 16px 0;
 }
+.ands-heiadr{
+  width: 600px;
+  .ands-zhanzhu{
+
+  }
+  .ands-zhanzhu-img{
+    display: flex;
+    img{
+      width: 200px;
+      height: 200px;
+    }
+
+  }
+
+}
+
