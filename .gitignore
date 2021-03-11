@@ -1,4 +1,8 @@
 # Logs
+/.idea
+/dist/*
+/test-results/
+/doc/
 logs
 *.log
 npm-debug.log*

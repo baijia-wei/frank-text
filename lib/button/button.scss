@@ -5,6 +5,7 @@
   background: #1890ff;
   outline: 0;
   border: none;
+  padding: 0 1em;
 
 }
 .fui-button.red{
@@ -26,3 +27,6 @@
    background: red;
    color: #ffffff
  }
+.fui-button:active {
+  opacity: 0.5;
+}
