@@ -8,20 +8,35 @@
   padding: 0 1em;
 
 }
-.fui-button.red{
+.red{
   min-width: 4em;
   height: 2.1em;
    color: #ffffff;
   background: #34a853;
 }
-.fui-button.blue{
+.blue{
   min-width: 4em;
   height:2.1em;
   background: #ffa400;
    color: #ffffff;
 }
+.dashed{
+  background: #ffffff;
+  color: #333333;
+  border:1px dashed  #333333;
+}
+.ghost{
+  background: #ffffff;
+  color: #333333;
+  border:1px solid #333333;
+}
+.circle{
+  width: 6em;
+  border-radius: 2.1em;
 
-.fui-button.yellow{
+}
+
+.yellow{
    min-width: 4em;
    height: 2.1em;
    background: red;

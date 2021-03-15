@@ -1,14 +1,14 @@
 import React from 'react';
 import Buttonss from './button'
 
-const ButtonExample1: React.FunctionComponent = () => {
+const ButtonAssembly2: React.FunctionComponent = () => {
     return (
         <div className="ands-header">
-            <Buttonss>默认按钮</Buttonss>
-            <Buttonss type="red">成功按钮</Buttonss>
-            <Buttonss type="yellow">错误按钮</Buttonss>
-            <Buttonss type="blue">警告按钮</Buttonss>
+            <Buttonss type="">@</Buttonss>
+            <Buttonss type="red">搜索</Buttonss>
+            <Buttonss type="ios-search">搜索</Buttonss>
+            <Buttonss type="circle">圆角</Buttonss>
         </div>
     );
 };
-export default ButtonExample1;
+export default ButtonAssembly2;
