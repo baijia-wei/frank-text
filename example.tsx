@@ -13,6 +13,7 @@ import UpdateLog from "./lib/guanw/UpdateLog";
 import {modal} from "./lib/dialog/dialog";
 import Buttonss from "./lib/button/button";
 import FormExample from "./lib/form/form.example";
+import InputExample from './lib/input/input assembly1'
 
 const openModal = () => {
     const close = modal(
@@ -75,6 +76,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/form">表单</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/input">输入框</NavLink>
+                        </li>
                     </ul>
                 </Aside>
                 <Content>
@@ -85,6 +89,7 @@ ReactDOM.render(
                     <Route path="/ganging" component={GanYang}/>
                     <Route path="/updated" component={UpdateLog}/>
                     <Route path="/form" component={FormExample}/>
+                    <Route path="/input" component={InputExample}/>
 
 
                 </Content>
