@@ -10,8 +10,10 @@ pre {
 $padding: 16px;
 $main-color: #00ADB5;
 $border-color: #eee;
+
 body {
   font-size: 16px;
+  align-content: center;
 }
 .site-page {
   background: #ffffff;
@@ -22,7 +24,6 @@ body {
 }
 .site-header {
   background: $border-color;
-
   .logo {
     padding: 0 $padding;
     display: flex;

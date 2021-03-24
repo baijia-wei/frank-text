@@ -14,6 +14,7 @@ import {modal} from "./lib/dialog/dialog";
 import Buttonss from "./lib/button/button";
 import FormExample from "./lib/form/form.example";
 import InputExample from './lib/input/input assembly1'
+import Hoc from "./lib/guanw/HOC";
 
 const openModal = () => {
     const close = modal(
@@ -41,7 +42,6 @@ ReactDOM.render(
                 <div className="logo">
                     <img src="logo.png" width="48" height="48" alt="logo"/>
                     <span>Ands</span>
-
                 </div>
             </Header>
 
@@ -79,6 +79,10 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/input">输入框</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/hoc">草稿练习</NavLink>
+                        </li>
+
                     </ul>
                 </Aside>
                 <Content>
@@ -90,7 +94,7 @@ ReactDOM.render(
                     <Route path="/updated" component={UpdateLog}/>
                     <Route path="/form" component={FormExample}/>
                     <Route path="/input" component={InputExample}/>
-
+                    <Route path="/hoc" component={Hoc}/>
 
                 </Content>
             </Layout>
