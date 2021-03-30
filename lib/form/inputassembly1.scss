@@ -7,17 +7,24 @@
 
 }
 .ands-header-content{
+  height: 500px;
   padding: 10px;
   display: flex;
   .ands-content-left,
   .ands-content-right{
-
     min-width: 480px;
     margin-right:1em;
     padding: 1em 1em;
     border: 1px solid #cccccc;
     border-radius: 5px;
   }
+  .ands-content-right{
+    overflow-y: scroll;
+  }
+  .ands-content-left{
+
+  }
+
 }
 .ands-content-right:hover,
 .ands-content-left:hover{

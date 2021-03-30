@@ -23,11 +23,9 @@ const Form: React.FunctionComponent<Props> = (props) => {
         props.onSubmit(e)
     }
     const onInputChange = (name: string, value: string) => {
-        // console.log(name,value)
         const newFormValue = {...formData, [name]: value};
         props.onChange(newFormValue)
     }
-
     return (
         <form onSubmit={onsubmit}>
             <table className="fui-form-table">
@@ -44,8 +42,6 @@ const Form: React.FunctionComponent<Props> = (props) => {
                                 {props.errors[f.name]}
                             </div>
                         </td>
-
-
                     </tr>
                 )}
                 <tr className="fui-form-tr">

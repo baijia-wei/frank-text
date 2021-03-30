@@ -23,6 +23,9 @@ body {
   padding-top: 16px;
 }
 .site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: $border-color;
   .logo {
     padding: 0 $padding;
@@ -34,6 +37,12 @@ body {
       font-size: 32px;
     }
   }
+  .git{
+    margin-right: 20px;
+    font-size: 15px;
+  }
+
+
 }
 .site-aside {
   border-right: 1px solid #EEEEEE;

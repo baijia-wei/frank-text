@@ -7,15 +7,14 @@ import LayoutExample from './lib/layout/layout.example';
 import {Layout, Header, Aside, Content, Footer} from "./lib/layout/layout"
 import './example.scss';
 import IconDemo from './lib/icon/icon.demo';
-// const logo = require('./logo.png');
+// const git= require('./lib/icons/GitHub.png');
 import GanYang from "./lib/guanw/guanwang";
 import UpdateLog from "./lib/guanw/UpdateLog";
 import {modal} from "./lib/dialog/dialog";
 import Buttonss from "./lib/button/button";
-import FormExample from "./lib/form/form.example";
+import FormExample from "./lib/form/form.assembly";
 import InputExample from './lib/input/input assembly1'
 import Hoc from "./lib/guanw/HOC";
-
 const openModal = () => {
     const close = modal(
         <div className="ands-head">
@@ -42,6 +41,12 @@ ReactDOM.render(
                 <div className="logo">
                     <img src="logo.png" width="48" height="48" alt="logo"/>
                     <span>Ands</span>
+                </div>
+                <div className="git">
+                    <a href="https://github.com/baijia-wei/frank-text">
+                        <img src='./lib/icons/GitHub.png' width="20" height="20" alt="github"/>
+                        GitHub
+                    </a>
                 </div>
             </Header>
 

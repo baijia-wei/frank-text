@@ -7,7 +7,7 @@ const UpdateLog: React.FunctionComponent = () => {
                 <h2>更新日志</h2>
                 <h3>1.0.2.6</h3>
                 <div>
-                    2021/3/15
+                    2021/3/20
                     <ul>
                         <li>
                            表单验证完成待优化
@@ -25,6 +25,7 @@ const UpdateLog: React.FunctionComponent = () => {
                 <h2>更新日志</h2>
                 <h3>1.0.2.5</h3>
                 <div>
+                    2021/3/15
                     <ul>
                         <li>
                             新增doc配置文件

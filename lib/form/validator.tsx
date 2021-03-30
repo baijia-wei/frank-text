@@ -8,13 +8,10 @@ interface FormRule {
     maxLength?: number;
     pattern?:RegExp
 }
-
 type FormRules = Array<FormRule>
-
 interface FormErrors {
     [k: string]: string
 }
-
 function isEmpty(value: any) {
     return value === undefined || value === null || value === '';
 }
@@ -22,11 +19,8 @@ export function noError(errors:any){
     return Object.keys(errors).length===0
 }
 
-
 const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
-
     let errors: any = {};
-
     const  addError = (key:string,message:string) => {
         if(errors[key]===undefined){
             errors[key]=[];
@@ -49,9 +43,6 @@ const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
                 addError(rule.key,'格式不正确')
             }
         }
-
-
-
     })
     return errors
 }

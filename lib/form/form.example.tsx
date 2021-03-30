@@ -2,20 +2,17 @@ import React, {useState ,Fragment} from "react";
 import Form,{FormValue} from "./form";
 import Validator, {noError} from './validator';
 import Buttonss from '../button/button';
-
-
-
 const FormExample: React.FunctionComponent = () =>{
     const  [formData,setFromData]=useState<FormValue>({
         username:'',
         password:''
     });
+
     const [fields]=useState([
         {name:'username',label:'用户名',input:{type:'text'}},
         {name:'password',label:'密码',input: {type: 'password'}}
     ]);
     const [errors,setErors]=useState({});
-
     const onSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
 
         const  rules=[
@@ -26,10 +23,10 @@ const FormExample: React.FunctionComponent = () =>{
         ]
         Validator(formData,rules)
         setErors(errors)
-        if (noError(errors)) {
-            // 没错
-        }
 
+        if (noError(errors)) {
+
+        }
     }
     return(
         <Form value={formData} fields={fields}
