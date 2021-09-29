@@ -15,6 +15,8 @@ import Buttonss from "./lib/button/button";
 import FormExample from "./lib/form/form.assembly";
 import InputExample from './lib/input/input assembly1'
 import Hoc from "./lib/guanw/HOC";
+import  TreeExample  from './lib/tree/tree.example';
+ import Scroll from './lib/scroll/scroll.example'
 const openModal = () => {
     const close = modal(
         <div className="ands-head">
@@ -61,7 +63,7 @@ ReactDOM.render(
                             <NavLink to="/updated">更新日志</NavLink>
                         </li>
                         <li className="site-aside-lanzhou">
-                            <Buttonss onClick={openModal}>赞助</Buttonss>
+                           
                         </li>
                     </ul>
                     <h2>组件</h2>
@@ -81,9 +83,18 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/form">表单</NavLink>
                         </li>
+
+                        <li>
+                            <NavLink to="/tree">树形组件</NavLink>
+                        </li>
+
                         <li>
                             <NavLink to="/input">输入框</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/scroll">滚动条</NavLink>
+                        </li>
+                        
                         <li>
                             <NavLink to="/hoc">草稿练习</NavLink>
                         </li>
@@ -100,7 +111,8 @@ ReactDOM.render(
                     <Route path="/form" component={FormExample}/>
                     <Route path="/input" component={InputExample}/>
                     <Route path="/hoc" component={Hoc}/>
-
+                    <Route path="/tree" component={TreeExample}/>
+                    <Route path="/scroll" component={Scroll}/>
                 </Content>
             </Layout>
             <Footer className="site-footer">
