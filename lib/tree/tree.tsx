@@ -1,9 +1,26 @@
 import React from "react";
-const Tree:React.FunctionComponent=()=>{
+
+interface SourceDataItem{
+    text:string;
+    value:string;
+    children?:SourceDataItem[]
+}
+interface Props{
+    sourceData:SourceDataItem[]
+}
+const Tree:React.FunctionComponent<Props>=(Props)=>{
     return (
         <div>
-            Tree
-            <h1></h1>
+           {/* {Props.sourceData[0].text} */}
+           {
+               Props.sourceData.map((item,index)=>{
+                return <div key={index}> {item.text}
+                        {item.children?.map(item2=>{
+                            return <div> { item2.text}</div>
+                        })}
+                </div>
+               })
+           }
         </div>
     );
 };
