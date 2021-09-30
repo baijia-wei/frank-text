@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Tree from "./tree";
+import Tree, { SourceDataItem } from "./tree";
 const TreeExample: React.FunctionComponent = () => {
     const [array, setArray] = useState([{
         text: '一职中',
@@ -59,19 +59,35 @@ const TreeExample: React.FunctionComponent = () => {
 
                 ]
             },
-            { text: "二直用4", value: '2.4' , children: [
-                { text: "二直用2.4.1", value: "2.4.1" },
+            {
+                text: "二直用4", value: '2.4', children: [
+                    { text: "二直用2.4.1", value: "2.4.1" },
 
-            ]},
+                ]
+            },
 
         ]
     }
+    ]);
 
-    ])
+
+
+
+
+    const [selectedValues,setselectedValues]=useState(["1.1.1", "2.2"])
+
+    const onChange = (item: SourceDataItem, bool: boolean) => {
+        // 如果这个item是等于true说明你想把这个item选中
+       if(bool===true){
+        // setselectedValues([...selectedValues,item.value])
+       }
+
+    }
+
     return (
         <div>
             <h1>展示数据</h1>
-            <Tree sourceData={array}></Tree>
+            <Tree sourceData={array} onChange={onChange} selectedValues={selectedValues}></Tree>
         </div>
     );
 };
