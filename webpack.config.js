@@ -7,6 +7,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
+  
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
         library: 'FUI',
@@ -16,7 +17,10 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader'
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true // 只做语言转换，而不做类型检查
+                  }
             },
             {
                 test: /\.svg$/,

@@ -5,7 +5,7 @@ import Buttonss from '../button/button';
 
 
 const usernames = ['frank', 'jack', 'frankfrank', 'alice', 'bob'];
-const checkUserName = (username: string, succeed: () => void, fail: () => void) => {
+const checkUserName = (username: string, succeed: Function, fail: () => void) => {
     setTimeout(() => {
         console.log('我现在知道用户名是否存在');
         if (usernames.indexOf(username) >= 0) {

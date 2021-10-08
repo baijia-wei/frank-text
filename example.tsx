@@ -16,26 +16,28 @@ import FormExample from "./lib/form/form.assembly";
 import InputExample from './lib/input/input assembly1'
 import Hoc from "./lib/guanw/HOC";
 import  TreeExample  from './lib/tree/tree.example';
- import Scroll from './lib/scroll/scroll.example'
-const openModal = () => {
-    const close = modal(
-        <div className="ands-head">
-            <div className="ands-manchu">
-                Ands 是采用 MIT 许可的开源项目，您可以在个人或企业项目中免费使用。不过，如果您觉得 iView 对您的项目带来了帮助，提高开发效率，可以用捐助来表示您的谢意：) 您可以用公司的名义进行赞助，赞助信息将在文档页展示。联系邮箱 admin@aresn.com \ 个人可使用 微信 或 支付宝 捐助：
-            </div>
-            <div>
-                支付宝&微信
-            </div>
-            <div className="ands-lanzhou-img">
-                <div>
-                    <img src="lib/icons/wx.png" alt="微信"/>
-                    <img src="lib/icons/zfb.png" alt="支付宝"/>
-                </div>
+import Scroll from './lib/scroll/scroll.example'
+import MultipleChoice from "./lib/choice/choice.example"
 
-            </div>
-            <Buttonss onClick={() => close()}>关闭</Buttonss>
-        </div>);
-};
+// const openModal = () => {
+//     const close = modal(
+//         <div className="ands-head">
+//             <div className="ands-manchu">
+//                 Ands 是采用 MIT 许可的开源项目，您可以在个人或企业项目中免费使用。不过，如果您觉得 iView 对您的项目带来了帮助，提高开发效率，可以用捐助来表示您的谢意：) 您可以用公司的名义进行赞助，赞助信息将在文档页展示。联系邮箱 admin@aresn.com \ 个人可使用 微信 或 支付宝 捐助：
+//             </div>
+//             <div>
+//                 支付宝&微信
+//             </div>
+//             <div className="ands-lanzhou-img">
+//                 <div>
+//                     <img src="lib/icons/wx.png" alt="微信"/>
+//                     <img src="lib/icons/zfb.png" alt="支付宝"/>
+//                 </div>
+
+//             </div>
+//             <Buttonss onClick={() => close()}>关闭</Buttonss>
+//         </div>);
+// };
 ReactDOM.render(
     <Router>
         <Layout className="site-page">
@@ -54,7 +56,6 @@ ReactDOM.render(
 
             <Layout>
                 <Aside className="site-aside">
-
                     <ul>
                         <li>
                             <NavLink to="/ganging">安装</NavLink>
@@ -94,6 +95,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/scroll">滚动条</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/choice">选择器</NavLink>
+                        </li>
                         
                         <li>
                             <NavLink to="/hoc">草稿练习</NavLink>
@@ -113,6 +117,8 @@ ReactDOM.render(
                     <Route path="/hoc" component={Hoc}/>
                     <Route path="/tree" component={TreeExample}/>
                     <Route path="/scroll" component={Scroll}/>
+                    <Route path="/choice" component={MultipleChoice}/>
+                    
                 </Content>
             </Layout>
             <Footer className="site-footer">

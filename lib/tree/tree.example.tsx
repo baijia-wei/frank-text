@@ -69,12 +69,7 @@ const TreeExample: React.FunctionComponent = () => {
         ]
     }
     ]);
-
-
-
-
-
-    const [selectedValues,setselectedValues]=useState(["1.1.1", "2.2"])
+    const [selectedValues,setselectedValues]=useState([])
 
     const onChange = (item: SourceDataItem, bool: boolean) => {
         // 如果这个item是等于true说明你想把这个item选中
