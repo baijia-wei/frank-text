@@ -18,6 +18,7 @@ const withZhifu= (Comp: (props: Props) => JSX.Element)=>{
     return (props:Proposes) => <Comp {...props} name={name}/>
 }
 const NewZhihan=withZhifu(Zhifu)
+
 const Hoc: React.FunctionComponent<Props> =(props) => {
     return (
         <div>

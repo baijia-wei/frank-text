@@ -12,6 +12,7 @@
     "rootDir": ".",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
+    "downlevelIteration": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "importHelpers": true,
