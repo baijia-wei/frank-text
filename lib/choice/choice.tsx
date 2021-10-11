@@ -32,7 +32,6 @@ const Choice: React.FunctionComponent<Props> = (props) => {
     const calculation=(item:string)=>{
          const daec: string[] = [...props.visible]
         if (daec.indexOf(item) == -1) {
-            // daec.splice(index, 1,item);
             daec.push(item)
         } else {
             daec.splice(daec.indexOf(item), 1); 
