@@ -1,167 +1,208 @@
-import React, { DragEventHandler, useEffect, useState } from "react";
+import React, { DragEventHandler, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./dragpull.scss"
+
+interface ListItem {
+    id: number,
+    title: string,
+    username: string,
+    point: number
+}
 const dragPull: React.FunctionComponent = () => {
-    const STATUS_TODO = 'STATUS_TODO';
-    const STATUS_DOING = 'STATUS_DOING';
-    const STATUS_DONE = 'STATUS_DONE';
-    const STATUS_CODE = {
-        STATUS_TODO: '待处理',
-        STATUS_DOING: '进行中',
-        STATUS_DONE: '已完成'
-    }
+
+    const dragItemRef = useRef<ListItem>();
+    const dropAreaRef = useRef<HTMLDivElement>(null);
+    //  每行多少列
+    const COLUMN = 4;
+    //  每个元素宽度
+    const WIDTH = 110;
+    //  每个元素高度
+    const HEIGHT = 30;
+    // 图片左右 padding
+    const IMAGE_PADDING = 5;
+
     // 秋天是影响情绪多变的季节，时而快乐，时而悲凉
     const [tasks, setTasks] = useState([
         {
             id: 1,
-            status: STATUS_TODO,
+
             title: "床前明月光",
-            username: "家玮",
+            username: "0000ff",
             point: 10
         },
         {
             id: 2,
-            status: STATUS_TODO,
+
             title: "疑是地上霜",
-            username: "家玮",
+            username: "cc00cc",
             point: 20
         },
         {
             id: 3,
-            status: STATUS_TODO,
+
             title: "举头望明月",
-            username: "家玮",
+            username: "9900ff",
             point: 30
         },
         {
-            id: 3,
-            status: STATUS_TODO,
+            id: 4,
             title: "低头思故乡",
-            username: "家玮",
+            username: "ff0033",
+            point: 40
+        },
+        {
+            id: 5,
+            title: "李白",
+            username: "ff00cc",
             point: 40
         }
     ])
-    const [luXun, setLuXun] = useState([
-        {
-            id: 1,
-            status: STATUS_TODO,
-            title: "运交华盖欲何求，未敢翻身已碰头。",
-            username: "家玮",
-            point: 10
-        },
-        {
-            id: 2,
-            status: STATUS_TODO,
-            title: "破帽遮颜过闹市，漏船载酒泛中流。",
-            username: "家玮",
-            point: 20
+
+   
+
+
+    const sortedList = useMemo(() => {
+        return tasks.slice().sort((a, b) => {
+            return a.id - b.id;
+        });
+    }, [tasks]);
+
+    const listHeight = useMemo(() => {
+        const size = tasks.length;
+        return Math.ceil(size / COLUMN) * HEIGHT;
+    }, [tasks]);
+
+
+    function isEqualBy<T>(a: T[], b: T[], key: keyof T) {
+        const aList = a.map((item) => item[key])
+        const bList = b.map((item) => item[key])
+        let flag = true;
+        aList.forEach((i, index) => {
+            if (i !== bList[index]) {
+                flag = false
+            }
+        })
+        return flag
+    }
+
+    // 将某个元素插入到数组中的某个位置
+    function insertBefore<T>(list: T[], from: T, to?: T): T[] {
+        const copy = [...list];
+        const fromIndex = copy.indexOf(from)
+        if (from === to) {
+            return copy;
         }
-        ,
-        {
-            id: 2,
-            status: STATUS_TODO,
-            title: "横眉冷对千夫指，俯首甘为孺子牛。",
-            username: "家玮",
-            point: 20
+        copy.splice(fromIndex, 1);
+        const newToIndex = to ? copy.indexOf(to) : -1
+        if (to && newToIndex >= 0) {
+            copy.splice(newToIndex, 0, from)
+        } else {
+            // 没有to或者to不在序列莉将元素移动到末尾
+            copy.push(from)
         }
-        ,
-        {
-            id: 2,
-            status: STATUS_TODO,
-            title: "躲进小楼成一统，管他冬夏与春秋。",
-            username: "家玮",
-            point: 20
+        return copy
+    }
+
+    const updateList = useCallback((clientX: number, clientY: number) => {
+        // 方法返回元素的大小及其相对于视口的位置。
+        const dropRect = dropAreaRef.current?.getBoundingClientRect()
+        if (dropRect) {
+            const offsetX = clientX - dropRect.left
+            const offsetY = clientY - dropRect.top
+            const dragItem = dragItemRef.current;
+            // console.log(offsetX,offsetY,dropRect.width);
+            if (
+                !dragItem || offsetX < 0 ||
+                offsetX > dropRect.width ||
+                offsetY < 0 ||
+                offsetY > dropRect.height
+            ) {
+                return;
+            }
+            const col = Math.floor(offsetX / WIDTH)
+            const row = Math.floor(offsetY / HEIGHT)
+            let currentIndex = row * COLUMN + col
+            const fromIndex = tasks.indexOf(dragItem)
+            if (fromIndex < currentIndex) {
+                currentIndex++
+            }
+            const currentItem = tasks[currentIndex]
+            const ordered = insertBefore(tasks, dragItem, currentItem)
+
+
+            if (isEqualBy(ordered, tasks, "id")) {
+                return;
+            }
+
+
+            setTasks(ordered)
+
         }
 
-    ])
 
-    const [celebrity, setcelebrity] = useState([
-        {
-            id: 1,
-            status: STATUS_TODO,
-            title: "其实地上本没有路，走的人多了，也便成了路。",
-            username: "家玮",
-            point: 60
-        }
-        ,
-        {
-            id: 2,
-            status: STATUS_TODO,
-            title: "我家门前有两棵树，一棵是枣树，另一棵也是枣树。",
-            username: "家玮",
-            point: 80
-        }
-    ])
+
+    }, [tasks]);
+
+    const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+        e.preventDefault()
+        updateList(e.clientX, e.clientY)
+    }, [updateList])
+
+
+
     // 用户开始拖动元素时触发
-    const handleDragStart = (e: any) => {
-        e.dataTransfer.setData("Text", e.target.innerText);
-        console.log(e, "用户开始拖动元素时触发");
+    const handleDragStart = (e: React.DragEvent<HTMLLIElement>, data: ListItem) => {
+
+
+        dragItemRef.current = data
+        const le = dropAreaRef.current?.querySelector(`[data-id="${data.id}"]`)
+        if (le) {
+            le.classList.add("draggingItem")
+        }
 
     }
-    // 拖动用户完成元素拖动后触发
-    const cancelSelect = (e: any) => {
-        const  data = e.dataTransfer.getData("Text");
-        console.log(data,'1');
-        console.log(e, '用户完成元素拖动后触发');
-
-    }
-    // <-----------------------------------------------------------------------------------------父容器事件>
-    // 拖动过程中，释放鼠标触发事件
-    const handleDrop = (e: any) => {
-        e.preventDefault();
-        console.log(e, "拖动过程中，释放鼠标触发事件");
-
-    }
-    // 当被鼠标拖动的对象进入其容器范围内时触发此事件
-    const handleDragEnter = (e: any) => {
-        e.preventDefault();
-        console.log(e, " 当被鼠标拖动的对象 进入 其容器范围内");
-
-    }
-    // 当被鼠标拖动的对象离开其容器范围内时触发此事件
-    const handleDragLeave = (e: any) => {
-        e.preventDefault();
-        console.log(e, "当被鼠标拖动的对象 离开 其容器范围内");
-
-    }
-    // 当某被拖动的对象在另一对象容器范围内拖动时触发此事件
-    const onDragOver = () => {
-
-    }
-  useEffect(()=>{
-    //   天加拖动事件监听
-    document.addEventListener("dragstart", (e)=> {
-        //dataTransfer.setData()方法设置数据类型和拖动的数据
-        e.dataTransfer.setData("Text", e.target.innerText);
-        console.log(e.target.innerText);
-        
-    })
-  })
-    // <-----------------------------------------------------------------------------------------父容器事件>
+    // 拖动结束
+    const handleDragEnd = useCallback(() => {
+        const data = dragItemRef.current
+        if (data) {
+            const le = dropAreaRef.current?.querySelector(`[data-id="${data.id}"]`)
+            if (le) {
+                le.classList.remove("draggingItem")
+            }
+            dragItemRef.current = undefined
+        }
+    }, [])
 
     return (
-        <div className="dragpull">
-
-            <ul onDrop={handleDrop}
-                onDragEnter={handleDragEnter}
-                onDragLeave={handleDragLeave}
-                // onDragOver={handleDragEnter}
+        <div className="dragpull"
+            ref={dropAreaRef}
+            style={{ width: COLUMN * (WIDTH + IMAGE_PADDING) + IMAGE_PADDING }}
+            onDragEnd={handleDragEnd}
+            onDragOver={handleDragOver}
+        >
+            <ul
+                className='list'
+                style={{ height: listHeight }}
             >
-                <div className="dragpull-title">静夜思</div>
-                {tasks.map((item, index) => (
-                    <li draggable="true"  onDragEnd={cancelSelect} key={index}>{item.title}</li>
-                ))}
-            </ul>
-            <ul onDrop={handleDrop}>
-                <div className="dragpull-title">鲁迅</div>
-                {luXun.map((item, index) => (
-                    <li draggable="true" key={index}>{item.title}</li>
-                ))}
-            </ul>
-            <ul>
-                <div className="dragpull-title">周树人</div>
-                {celebrity.map((item, index) => (
-                    <li draggable="true" key={index}>{item.title}</li>
-                ))}
+                {/* <div className="dragpull-title">静夜思</div> */}
+                {sortedList.map((item) => {
+                    const index = tasks.findIndex((i) => i === item);
+                    const row = Math.floor(index / COLUMN);
+                    const col = index % COLUMN;
+                    return <li
+                        className="item"
+                        key={item.id}
+                        draggable
+                        style={{
+                            height: HEIGHT,
+                            left: col * (WIDTH + IMAGE_PADDING),
+                            top: row * HEIGHT,
+                            padding: `0 ${IMAGE_PADDING}px`,
+                        }}
+                        data-id={item.id}
+                        onDragStart={(e) => handleDragStart(e, item)}
+
+                    >{item.title}</li>
+                })}
             </ul>
         </div>
     );

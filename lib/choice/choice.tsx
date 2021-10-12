@@ -31,12 +31,16 @@ const Choice: React.FunctionComponent<Props> = (props) => {
     // 多
     const calculation=(item:string)=>{
          const daec: string[] = [...props.visible]
+      
         if (daec.indexOf(item) == -1) {
+            if(props.visible.length>2){
+                return []
+            }
             daec.push(item)
         } else {
             daec.splice(daec.indexOf(item), 1); 
         }
-        console.log(daec);
+       
         return daec
     }
 
