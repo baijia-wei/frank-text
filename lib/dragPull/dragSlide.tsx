@@ -11,9 +11,6 @@ const dragSlide: React.FunctionComponent = () => {
     let clientHeightY = null
     let clientWeightX = null
 
-    const dragItemRef = useRef<ListItem>();
-    const dropAreaRef = useRef<any>();
-
     const [luXun, setLuXun] = useState([
         {
             id: 1,
@@ -48,6 +45,7 @@ const dragSlide: React.FunctionComponent = () => {
 
     ])
 
+
     const [celebrity, setcelebrity] = useState([
         {
             id: 1,
@@ -68,20 +66,10 @@ const dragSlide: React.FunctionComponent = () => {
 
 
 
-    const sortedList = useMemo(() => {
-        return luXun.slice().sort((a, b) => {
-            return a.id - b.id;
-        });
-    }, [luXun]);
-
 
 
     // 用户开始拖动元素时触发
     const handleDragStart = (e: React.DragEvent<HTMLLIElement>, data: ListItem) => {
-
-
-
-
     }
     // 拖动用户完成元素拖动后触发
     const cancelSelect = (e: any) => {

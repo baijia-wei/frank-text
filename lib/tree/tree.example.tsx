@@ -69,20 +69,20 @@ const TreeExample: React.FunctionComponent = () => {
         ]
     }
     ]);
-    const [selectedValues,setselectedValues]=useState([])
+    const [selectedValues, setselectedValues] = useState<any>([])
 
     const onChange = (item: SourceDataItem, bool: boolean) => {
         // 如果这个item是等于true说明你想把这个item选中
-       if(bool===true){
-        // setselectedValues([...selectedValues,item.value])
-       }
-
+        if (bool === true) {
+            setselectedValues([...selectedValues, item.value])
+        } else {
+            setselectedValues(selectedValues.filter((value: string) => value != item.value))
+        }
     }
-
     return (
         <div>
             <h1>展示数据</h1>
-            <Tree sourceData={array} onChange={onChange} selectedValues={selectedValues}></Tree>
+            <Tree multiple={false} sourceData={array} onChange={onChange} selected={selectedValues}></Tree>
         </div>
     );
 };
