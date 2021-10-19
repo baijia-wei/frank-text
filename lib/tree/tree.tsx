@@ -1,7 +1,6 @@
 import { scopedClassMaker } from "../helpers/classes";
 import React from "react";
 import "./tree.scss"
-import { ProgressPlugin } from "webpack";
 export interface SourceDataItem {
     text: string;
     value: string;

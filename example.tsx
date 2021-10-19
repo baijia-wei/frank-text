@@ -19,6 +19,7 @@ import  TreeExample  from './lib/tree/tree.example';
 import Scroll from './lib/scroll/scroll.example'
 import MultipleChoice from "./lib/choice/choice.example"
 import dragPull from "./lib/dragPull/drag.example"
+import cityselect from "./lib/citySelect/citySelect.exampie"
 const openModal = () => {
     const close = modal(
         <div className="ands-head">
@@ -105,6 +106,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/dragpull">拖拽</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/cityselect">城市组件</NavLink>
+                        </li>
 
                     </ul>
                 </Aside>
@@ -122,6 +126,7 @@ ReactDOM.render(
                     <Route path="/scroll" component={Scroll}/>
                     <Route path="/choice" component={MultipleChoice}/>
                     <Route path="/dragpull" component={dragPull}/>
+                    <Route path="/cityselect" component={cityselect}/>
                 </Content>
             </Layout>
             <Footer className="site-footer">
