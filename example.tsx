@@ -20,6 +20,8 @@ import Scroll from './lib/scroll/scroll.example'
 import MultipleChoice from "./lib/choice/choice.example"
 import dragPull from "./lib/dragPull/drag.example"
 import cityselect from "./lib/citySelect/citySelect.exampie"
+import actionsheet from "./lib/actionSheet/actionsheet.example"
+
 const openModal = () => {
     const close = modal(
         <div className="ands-head">
@@ -110,6 +112,11 @@ ReactDOM.render(
                             <NavLink to="/cityselect">城市组件</NavLink>
                         </li>
 
+                        <li>
+                            <NavLink to="/actionsheet">动作面板</NavLink>
+                        </li>
+
+
                     </ul>
                 </Aside>
                 <Content>
@@ -127,6 +134,7 @@ ReactDOM.render(
                     <Route path="/choice" component={MultipleChoice}/>
                     <Route path="/dragpull" component={dragPull}/>
                     <Route path="/cityselect" component={cityselect}/>
+                    <Route path="/actionsheet" component={actionsheet}/>
                 </Content>
             </Layout>
             <Footer className="site-footer">

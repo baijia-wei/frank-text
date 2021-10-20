@@ -1,0 +1,49 @@
+.Action {
+    position: relative;
+    .actionsheet {
+        width: 400px;
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+       
+        background: chartreuse;
+    }
+    .actionsheet-dialog {
+        overflow: hidden;
+        position: absolute;
+        top: 30px;
+        width: 400px;
+        height: 500px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        // background-color: rgba(216, 216, 216, 0.5);
+        transition: all 0.5s ease-in-out;
+        .dialog-head {
+            display: flex;
+            flex-direction: column;
+        }
+        .dialog, .dialog-qux{
+            height: 37px;
+            text-align: center;
+            line-height: 37px;
+            width: 100%;
+            background-color: cyan;
+        }
+        .dialog:nth-child(1) {
+            border-radius: 10px 10px 0 0;
+        }
+        .dialog:hover{
+            opacity: .5;
+        }
+    }
+}
+.none {
+    display: none;
+}
+.dialog-z{
+    transition: all 0.5s ease-in-out;
+   
+}
