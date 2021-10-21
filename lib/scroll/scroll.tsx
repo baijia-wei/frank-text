@@ -15,8 +15,9 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
     let draggingRef=useRef(false)
     let lastYRef=useRef(0)
 
+    // 控制滚动条不超出上下文
     const setBarTop=(numbers: number)=>{
-        if(numbers<0){false}
+        if(numbers<0){return}
         const {current}=constainerRef;
         const scrollHeight=current!.scrollHeight
         const viewheight=current!.getBoundingClientRect().height
@@ -57,11 +58,13 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
     const onMouseUpBar=()=>{
         draggingRef.current=false
     }
+    // 鼠标点击开始移动
     const onMouseDownBar:MouseEventHandler=(e)=>{
         draggingRef.current=true
         firstY.current=e.clientY
         firstBarTopRef.current=barTop
     }
+    // 鼠标移动计算高度
     const onMouseMoveBar=(e:MouseEvent)=>{
         if(draggingRef.current){
             const  delta=e.clientY-firstY.current;

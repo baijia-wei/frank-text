@@ -1,0 +1,31 @@
+.tabs {
+    display: flex;
+    background-color: rgb(247, 249, 252);
+    justify-content: space-around;
+    width: 500px;
+    line-height: 37px;
+    color: #000;
+    box-sizing: border-box;
+    height: 37px;
+    .tabs-item {
+    }
+}
+
+.boxsw {
+    color: rgb(8, 121, 250);
+    box-sizing: border-box;
+    border-bottom: 3px solid rgb(8, 121, 250);
+}
+.select{
+    text-align: center;
+    width: 100px;
+}
+
+.tabs-content{
+    width: 500px;
+    height: 600px;
+    background-color: cyan;
+}
+.none{
+    display: none;
+}

@@ -82,7 +82,7 @@ const TreeExample: React.FunctionComponent = () => {
     return (
         <div>
             <h1>展示数据</h1>
-            <Tree multiple={false} sourceData={array} onChange={onChange} selected={selectedValues}></Tree>
+            <Tree multiple={true} sourceData={array} onChange={onChange} selected={selectedValues}></Tree>
         </div>
     );
 };

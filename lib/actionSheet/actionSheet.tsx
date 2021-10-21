@@ -34,7 +34,12 @@ const ActionSheet: FunctionComponent<Props> = (props) => {
         } else {
             console.log("关闭");
             if (!divRef.current||!divRefsw.current) { return }
+            const { height } = divRef.current.getBoundingClientRect()
+            divRef.current.style.height = height+"px";
+            divRef.current.getBoundingClientRect()
             divRef.current.style.height = "0px";
+            divRefsw.current.style.backgroundColor='rgba(216, 216, 216, .5)'
+            divRefsw.current.getBoundingClientRect()
             divRefsw.current.style.backgroundColor='rgba(216, 216, 216, 0)'
         }
     })

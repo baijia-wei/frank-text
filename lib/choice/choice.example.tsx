@@ -10,6 +10,11 @@ const MultipleChoice: React.FunctionComponent = () => {
     const [arrdatawss, setarrdatawss] = useState<string[]>([])
     const [arrdatas] = useState(['神子', '将军', '公子', '胡桃', '心海', '钟离'])
 
+
+   
+
+
+    
     // 单
     const onClicksw = (item: string[]) => {
         setarrdataws(item)
