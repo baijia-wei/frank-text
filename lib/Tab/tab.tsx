@@ -9,20 +9,20 @@ const Tab: any = (props: any) => {
 
     return (
         <div>
-            {/* <div className="tabs">
+            <div className="tabs">
                 {React.Children.map(props.children, (item, index) => {
                     return <div onClick={() => { setcurrentIndex(index) }}
                         className={currentIndex === index ? "select boxsw" : " select "}>{item?.props.title}</div>
                 })}
-
-
             </div>
+
+            
             <div className="tabs-content">
                 {React.Children.map(props.children, (item, index) => {
                     return <div onClick={() => { setcurrentIndex(index) }}
                         className={currentIndex === index ? "tabs-content-select" : "none"}>{item}</div>
                 })}
-            </div> */}
+            </div>
 
         </div>
 
@@ -30,8 +30,8 @@ const Tab: any = (props: any) => {
 
 }
 
-Tab.TabPane =  (props1: any) =>{
-    
+Tab.TabPane = (props1: any) => {
+
     console.log(props1);
 
 

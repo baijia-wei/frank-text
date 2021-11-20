@@ -22,6 +22,8 @@ import dragPull from "./lib/dragPull/drag.example"
 import cityselect from "./lib/citySelect/citySelect.exampie"
 import actionsheet from "./lib/actionSheet/actionsheet.example"
 import TabExample from "./lib/Tab/tab.example"
+import TablesExample from "./lib/table/table.example"
+
 const openModal = () => {
     const close = modal(
         <div className="ands-head">
@@ -118,6 +120,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/tabexample">Tabs</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/tables">Tables 表格</NavLink>
+                        </li>
 
 
                     </ul>
@@ -139,6 +144,7 @@ ReactDOM.render(
                     <Route path="/cityselect" component={cityselect}/>
                     <Route path="/actionsheet" component={actionsheet}/>
                     <Route path="/tabexample" component={TabExample}/>
+                    <Route path="/tables" component={TablesExample}/>
 
                 </Content>
             </Layout>

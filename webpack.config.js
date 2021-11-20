@@ -5,7 +5,7 @@ module.exports = {
         index: './lib/index.tsx'
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx','d.ts'],
     },
   
     output: {
