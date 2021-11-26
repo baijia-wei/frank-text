@@ -4,8 +4,8 @@ import Option from './Option';
 
 const RadioExample = () => {
 
-    const handleChange=(value:string)=>{
-        console.log(value);
+    const handleChange=(value:any)=>{
+        console.log(value+"1");
         
     }
 

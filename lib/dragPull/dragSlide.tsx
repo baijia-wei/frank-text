@@ -117,14 +117,14 @@ const dragSlide: React.FunctionComponent = () => {
 
     }
     const handleDragEnters = () => {
-        const daec = [...celebrity];
-         daec.push({
-            id: 1,
-            title: "其实地上本没有路，走的人多了，也便成了路。",
-            username: "家玮",
-            point: 60
-        })
-        setcelebrity(daec)
+        // const daec = [...celebrity];
+        //  daec.push({
+        //     id: 1,
+        //     title: "其实地上本没有路，走的人多了，也便成了路。",
+        //     username: "家玮",
+        //     point: 60
+        // })
+        // setcelebrity(daec)
 
     }
 

@@ -46,7 +46,7 @@
             }
         }
         &.checked {
-            >.label-dot {
+            .label-dot {
                 border-color: $brand;
                 &::after {
                     opacity: 1;
