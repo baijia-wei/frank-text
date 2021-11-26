@@ -23,15 +23,15 @@ import cityselect from "./lib/citySelect/citySelect.exampie"
 import actionsheet from "./lib/actionSheet/actionsheet.example"
 import TabExample from "./lib/Tab/tab.example"
 import TablesExample from "./lib/table/table.example"
-
+import ReduxExample from "./lib/Redux/index"
+import RadioExample from "./lib/radio/radio"
 const openModal = () => {
     const close = modal(
         <div className="ands-head">
             <div className="ands-manchu">
-                Ands 是采用 MIT 许可的开源项目，您可以在个人或企业项目中免费使用。不过，如果您觉得 iView 对您的项目带来了帮助，提高开发效率，可以用捐助来表示您的谢意：) 您可以用公司的名义进行赞助，赞助信息将在文档页展示。联系邮箱 admin@aresn.com \ 个人可使用 微信 或 支付宝 捐助：
+                
             </div>
             <div>
-                支付宝&微信
             </div>
             <div className="ands-lanzhou-img">
                 <div>
@@ -43,6 +43,7 @@ const openModal = () => {
             <Buttonss onClick={() => close()}>关闭</Buttonss>
         </div>);
 };
+
 ReactDOM.render(
     <Router>
         <Layout className="site-page">
@@ -124,6 +125,13 @@ ReactDOM.render(
                             <NavLink to="/tables">Tables 表格</NavLink>
                         </li>
 
+                        <li>
+                            <NavLink to="/redux">Redux</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/radio">Radio</NavLink>
+                        </li>
+
 
                     </ul>
                 </Aside>
@@ -145,6 +153,8 @@ ReactDOM.render(
                     <Route path="/actionsheet" component={actionsheet}/>
                     <Route path="/tabexample" component={TabExample}/>
                     <Route path="/tables" component={TablesExample}/>
+                    <Route path="/redux" component={ReduxExample}/>
+                    <Route path="/Radio" component={RadioExample}/>
 
                 </Content>
             </Layout>

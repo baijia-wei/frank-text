@@ -23,7 +23,7 @@ const FormExample: React.FunctionComponent = () =>{
     });
     const [fields]=useState([
 
-        {name: 'image', label: '头像', input: {type: 'text'}},
+        {name: 'username', label: '头像', input: {type: 'text'}},
         {name: 'password', label: '密码', input: {type: 'password'}},
     ]);
     const [errors, setErrors] = useState({});
@@ -47,7 +47,7 @@ const FormExample: React.FunctionComponent = () =>{
             console.log(errors);
             setErrors(errors);
             if (noError(errors)) {
-                // 没错
+              
             }
         });
     };
