@@ -12,13 +12,13 @@ const dragPull: React.FunctionComponent = () => {
     const dragItemRef = useRef<ListItem>();
     const dropAreaRef = useRef<HTMLDivElement>(null);
     //  每行多少列
-    const COLUMN = 4;
+    const COLUMN = 1;
     //  每个元素宽度
     const WIDTH = 110;
     //  每个元素高度
     const HEIGHT = 30;
-    // 图片左右 padding
-    const IMAGE_PADDING = 5;
+    //  每个元素左右 padding
+    const IMAGE_PADDING = 0;
 
     // 秋天是影响情绪多变的季节，时而快乐，时而悲凉
     const [tasks, setTasks] = useState([
