@@ -25,6 +25,7 @@ import TabExample from "./lib/Tab/tab.example"
 import TablesExample from "./lib/table/table.example"
 import ReduxExample from "./lib/Redux/index"
 import RadioExample from "./lib/radio/radio"
+import ActivityExample from "./lib/activity/activity"
 
 import SwitchExample from "./lib/switch/switch.example"
 const openModal = () => {
@@ -137,6 +138,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/switch">Switch</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/activity">活动</NavLink>
+                        </li>
 
                     </ul>
                 </Aside>
@@ -161,6 +165,7 @@ ReactDOM.render(
                     <Route path="/redux" component={ReduxExample} />
                     <Route path="/Radio" component={RadioExample} />
                     <Route path="/switch" component={SwitchExample} />
+                    <Route path="/activity" component={ActivityExample} />
 
                 </Content>
             </Layout>

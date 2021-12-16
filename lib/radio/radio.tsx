@@ -5,13 +5,11 @@ import Option from './Option';
 const RadioExample = () => {
 
     const handleChange=(value:any)=>{
-        console.log(value+"1");
-        
+        console.log(value+"1");   
     }
 
     return <div>
         <h1>我的信息</h1>
-
         <Radio defaultValue="apple"  onChange={(value)  => handleChange(value)}>
             <Option value="apple">Apple</Option>
             <Option value="orange">Orange</Option>
