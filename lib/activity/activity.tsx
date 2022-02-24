@@ -35,61 +35,40 @@ const ActivityExample = () => {
     }
 
     const roll = () => {
-
-
-     
-
         speed = speed - 100
-
-
         if (speed <= 100) {
             speed = 100;
         }
-
-
         //每次调用都去掉全部active类名
         for (var j = 0; j < ali.length; j++) {
-            ali[j].classList.remove('active');
+            ali[j].classList.remove('actives');
         }
-
         weizhi++
-
-
         if (weizhi === ali.length) {
             weizhi = 0
             count++;
         }
-
-        ali[weizhi].classList.add('active');//添加变色类名
-
+        ali[weizhi].classList.add('actives');//添加变色类名
         if (count >= totalCount && weizhi === index) {
             clearTimeout(timer);
             setisClick(true)
             speed = minSpeed;
         } else {
             console.log(speed, count);
-
             timer = setTimeout(roll, speed);//不满足条件时调用定时器
             //最后一圈减速
             if (count >= totalCount - 1 || speed <= 100) {
                 speed += 300;
             }
         }
-
-
-
-
-
     };
 
 
     return <div>
         <h1>我的活动</h1>
         <div className="luckyDraw">
-
             <ul className="lottery">
-
-                <li className="active">1</li>
+                <li className="actives">1</li>
                 <li >2</li>
                 <li >3</li>
                 <li >4</li>
@@ -97,9 +76,6 @@ const ActivityExample = () => {
                 <li>6</li>
                 <li>7</li>
                 <li>8</li>
-
-
-
                 <div className="dox" onClick={handleChange}>点击抽奖</div>
             </ul>
 

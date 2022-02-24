@@ -76,37 +76,9 @@ const Tables: React.FunctionComponent<Props> = () => {
 
 
             <div>
-           zzzz
+        
 
             </div>
-
-
-            {/* <table  className="table-head">
-                <tbody>
-                    <tr >
-                        {props.columns.map((item: any) => (thretm(item)))}
-                    </tr>
-                    {props.dataSourcew.map((item: any, index: any) => (
-                        <>
-                            <tr key={item.key} onClick={(e) => ondex(e, index)}>
-                                {Object.keys(item).map((items, index) => {
-                                    if (items == "key") {
-                                        return
-                                    } else {
-                                        return <td key={index}>{item[items]}</td>
-                                    }
-                                })
-                                }
-                            </tr>
-                            <tr key={index} className={display[index] === 1 ? "none" : "visible"}>
-                                <td colSpan={Object.keys(item).length}>{props.dome()}</td>
-                            </tr>
-                        </>
-                    ))}
-                </tbody>
-            </table> */}
-
-
 
 
 

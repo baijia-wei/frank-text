@@ -1,0 +1,14 @@
+.containers {
+  height: 100vh;
+  overflow: scroll;
+  .items {
+    height: 30px;
+    border: 1px solid #eee;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  
+}
+.panel {
+  border: 1px solid red;
+}

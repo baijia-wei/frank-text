@@ -26,7 +26,7 @@ import TablesExample from "./lib/table/table.example"
 import ReduxExample from "./lib/Redux/index"
 import RadioExample from "./lib/radio/radio"
 import ActivityExample from "./lib/activity/activity"
-
+import longList from "./lib/longList/longList.example"
 import SwitchExample from "./lib/switch/switch.example"
 const openModal = () => {
     const close = modal(
@@ -141,6 +141,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/activity">活动</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/longList">Long list</NavLink>
+                        </li>
 
                     </ul>
                 </Aside>
@@ -166,7 +169,7 @@ ReactDOM.render(
                     <Route path="/Radio" component={RadioExample} />
                     <Route path="/switch" component={SwitchExample} />
                     <Route path="/activity" component={ActivityExample} />
-
+                    <Route path="/longList" component={longList} />
                 </Content>
             </Layout>
             <Footer className="site-footer">
