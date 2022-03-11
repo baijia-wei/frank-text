@@ -24,7 +24,17 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                loader: 'svg-sprite-loader',
+                use: [
+                    {
+                        loader: 'svg-sprite-loader',
+                        options: {
+                       
+                            esModule: false
+                        }
+                    }
+                   
+                ]
+               
             },
             {
                 test: /\.scss$/,
@@ -34,7 +44,14 @@ module.exports = {
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader : 'file-loader',
+                        options: {
+                            // name: './[name].[ext]',
+                            esModule: false
+                        }
+                    }
+                   
                 ]
 
             }

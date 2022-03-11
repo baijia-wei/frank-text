@@ -7,7 +7,7 @@ import LayoutExample from './lib/layout/layout.example';
 import { Layout, Header, Aside, Content, Footer } from "./lib/layout/layout"
 import './example.scss';
 import IconDemo from './lib/icon/icon.demo';
-// const git= require('./lib/icons/GitHub.png');
+
 import GanYang from "./lib/guanw/guanwang";
 import UpdateLog from "./lib/guanw/UpdateLog";
 import { modal } from "./lib/dialog/dialog";
@@ -27,7 +27,14 @@ import ReduxExample from "./lib/Redux/index"
 import RadioExample from "./lib/radio/radio"
 import ActivityExample from "./lib/activity/activity"
 import longList from "./lib/longList/longList.example"
-import SwitchExample from "./lib/switch/switch.example"
+import SwitchExample from "./lib/switch/switch.example";
+import { Icon } from './lib';
+const git = require('./lib/icons/GitHub.png');
+const log = require("./lib/assets/logo.png");
+const kj = require("./lib/assets/kj.svg");
+
+
+
 const openModal = () => {
     const close = modal(
         <div className="ands-head">
@@ -52,12 +59,12 @@ ReactDOM.render(
         <Layout className="site-page">
             <Header className="site-header">
                 <div className="logo">
-                    <img src="logo.png" width="48" height="48" alt="logo" />
+                    <img src={log} width="48" height="48" alt="logo" />
                     <span>Ands</span>
                 </div>
                 <div className="git">
                     <a href="https://github.com/baijia-wei/frank-text">
-                        <img src='./lib/icons/GitHub.png' width="20" height="20" alt="github" />
+                        <img src={git} width="20" height="20" alt="github" />
                         GitHub
                     </a>
                 </div>
@@ -170,11 +177,12 @@ ReactDOM.render(
                     <Route path="/switch" component={SwitchExample} />
                     <Route path="/activity" component={ActivityExample} />
                     <Route path="/longList" component={longList} />
+
                 </Content>
             </Layout>
             <Footer className="site-footer">
                 &copy; 白家玮
             </Footer>
         </Layout>
-    </Router>
+    </Router >
     , document.querySelector('#root'));
