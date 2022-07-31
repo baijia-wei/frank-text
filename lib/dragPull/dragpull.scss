@@ -1,0 +1,69 @@
+.dragpull {
+    .dragpull-title {
+        color: rgb(99, 0, 230);
+        margin-bottom: 5px;
+    }
+}
+
+.list {
+    // width: 570px;
+    height: 300px;
+    margin-top: 40px;
+    border-radius: 3px;
+    // border: 1px solid cyan;
+
+    list-style: none;
+    margin: 0;
+    position: relative;
+}
+.wrapper {
+    overflow: hidden;
+    margin: 100px auto;
+    padding: 10px;
+}
+.item {
+    width: 110px;
+    color: rgb(163, 0, 238);
+    border: 1px solid rgb(3, 113, 238);
+    border-radius: 3px;
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.draggingItem {
+    transition: scale(1.06);
+    opacity: 0.7;
+}
+
+.luxun-list {
+    padding: 10px;
+    text-align: center;
+    width: 400px;
+    margin-top: 40px;
+    border-radius: 3px;
+    border: 1px solid cyan;
+    li {
+        color: rgb(163, 0, 238);
+        padding: 5px;
+        height: 35px;
+        margin-bottom: 5px;
+        border: 1px solid rgb(3, 113, 238);
+        transition: all 0.5s ease-in-out;
+        border-radius: 3px;
+        &:nth-child(1) {
+            color: rgb(0, 248, 12);
+        }
+        &:nth-child(2) {
+            color: rgb(255, 0, 0);
+        }
+        &:nth-child(3) {
+            color: rgb(255, 0, 221);
+        }
+        &:nth-child(4) {
+            color: rgb(255, 153, 0);
+        }
+    }
+}

@@ -1,16 +1,21 @@
-import React from 'react';
+import React,{ButtonHTMLAttributes} from 'react';
 import classes  from "../helpers/classes";
 import './button.scss'
-interface ButtonProps extends React.HtmlHTMLAttributes<HTMLButtonElement> {
-    type?: string;
-
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+ level?:'important'|'normal'|'red'
 }
 
-const  Buttonss:React.FunctionComponent<ButtonProps> =(props)=>{
-    const  {type,children,...restProps} =props
+const  Buttonss:React.FunctionComponent<Props> =(props)=>{
+    const  {className,children,level,...restProps} =props
+
     return(
-        <button  className={classes( `fui-button`,type)} {...restProps}>{children}</button>
+        <button type="button"
+                className={classes( `fui-button`,`fui-button-${level}`,className)} {...restProps}>
+            {children}
+        </button>
     )
-}
-
+};
+Buttonss.defaultProps={
+    level:'normal'
+};
 export default Buttonss;

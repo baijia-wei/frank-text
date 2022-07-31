@@ -5,8 +5,9 @@ module.exports = {
         index: './lib/index.tsx'
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx','d.ts'],
     },
+  
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
         library: 'FUI',
@@ -16,11 +17,24 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader'
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true // 只做语言转换，而不做类型检查
+                  }
             },
             {
                 test: /\.svg$/,
-                loader: 'svg-sprite-loader',
+                use: [
+                    {
+                        loader: 'svg-sprite-loader',
+                        options: {
+                       
+                            esModule: false
+                        }
+                    }
+                   
+                ]
+               
             },
             {
                 test: /\.scss$/,
@@ -30,10 +44,18 @@ module.exports = {
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader : 'file-loader',
+                        options: {
+                            // name: './[name].[ext]',
+                            esModule: false
+                        }
+                    }
+                   
                 ]
 
             }
         ]
     },
+    devtool: "inline-source-map"
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import Buttonsst from './button.assembly1'
+// import ButtonExample1 from './button.assembly2';
+// import ButtonExample2 from './button.assembly';
 import './button.example.scss'
-import IconDemo from './button.demo';
+import { Assembly1,}  from './button.demo';
 
 const ButtonExample: React.FunctionComponent = () => {
     return (
@@ -15,19 +17,17 @@ const ButtonExample: React.FunctionComponent = () => {
             <div className="ands-header-content">
                 <div className="ands-content-left">
                     <Buttonsst></Buttonsst>
+                    <div className="ands-content-left-text">
+                       <p>
+                       </p>
+                    </div>
                 </div>
                 <div className="ands-content-right">
-                    <IconDemo/>
+                 <Assembly1/>
                 </div>
             </div>
-            <div className="ands-header-content">
-                <div className="ands-content-left">
-                    <Buttonsst></Buttonsst>
-                </div>
-                <div className="ands-content-right">
-                    <IconDemo/>
-                </div>
-            </div>
+
+
         </div>
     );
 };

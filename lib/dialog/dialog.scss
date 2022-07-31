@@ -1,4 +1,4 @@
-@import "../helper";
+@import "lib/helper";
 .fui-dialog {
   position: fixed; background: white; min-width: 20em;
   z-index: 2;
@@ -8,7 +8,7 @@
     z-index: 1;
   }
   &-header {
-    font-size: 22px;
+    font-size: 14px;
     padding: 8px 16px;
     border-bottom: 1px solid grey;
   }

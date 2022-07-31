@@ -1,32 +1,31 @@
+@import "../helper";
 .fui-button {
-  min-width: 4em;
-  height: 2.1em;
-  color: #ffffff;
-  background: #1890ff;
   outline: 0;
   border: none;
-  padding: 0 1em;
-
-}
-.fui-button.red{
-  min-width: 4em;
-  height: 2.1em;
-   color: #ffffff;
-  background: #34a853;
-}
-.fui-button.blue{
-  min-width: 4em;
-  height:2.1em;
-  background: #ffa400;
-   color: #ffffff;
-}
-
-.fui-button.yellow{
-   min-width: 4em;
-   height: 2.1em;
-   background: red;
-   color: #ffffff
+  padding: 4px 16px;
+  line-height: 22px;
+  transition: all 250ms;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &-normal {
+    color: #333;
+    border: 1px solid lighten(#333, 50%);
+    background: white;
+  };
+  &-red {
+    color: #ffffff;
+    background: red;
  }
+
+  &-important {
+    color: white;
+    border: 1px solid $main-color;
+    background: $main-color;
+
+  }
+}
 .fui-button:active {
   opacity: 0.5;
 }

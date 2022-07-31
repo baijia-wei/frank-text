@@ -3,7 +3,7 @@ import './dialog.scss';
 import {Icon} from '../index';
 import ReactDOM from 'react-dom';
 import {scopedClassMaker} from '../helpers/classes';
-
+import Buttonss from "../button/button";
 interface Props {
     visible: boolean;
     buttons?: Array<ReactElement>;
@@ -28,7 +28,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
             </div>
             <div className={sc('')}>
                 <div className={sc('close')} onClick={onClickClose}>
-                    <Icon name="close"/>
+                    <Icon name="cuowu"/>
                 </div>
                 <header className={sc('header')}>
                     提示
@@ -74,7 +74,7 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: (
     return close;
 };
 const alert = (content: string) => {
-    const button = <button onClick={() => close()}>OK</button>;
+    const button = <Buttonss onClick={() => close()}>OK</Buttonss>;
     const close = modal(content, [button]);
 };
 const confirm = (content: string, yes?: () => void, no?: () => void) => {
@@ -87,8 +87,8 @@ const confirm = (content: string, yes?: () => void, no?: () => void) => {
         no && no();
     };
     const buttons = [
-        <button onClick={onYes}>yes</button>,
-        <button onClick={onNo}>no</button>
+        <Buttonss onClick={onYes} level="important">yes</Buttonss>,
+        <Buttonss onClick={onNo}>no</Buttonss>
     ];
     const close = modal(content, buttons, no);
 };

@@ -10,8 +10,10 @@ pre {
 $padding: 16px;
 $main-color: #00ADB5;
 $border-color: #eee;
+
 body {
   font-size: 16px;
+  align-content: center;
 }
 .site-page {
   background: #ffffff;
@@ -21,8 +23,10 @@ body {
   padding-top: 16px;
 }
 .site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: $border-color;
-
   .logo {
     padding: 0 $padding;
     display: flex;
@@ -33,11 +37,17 @@ body {
       font-size: 32px;
     }
   }
+  .git{
+    margin-right: 20px;
+    font-size: 15px;
+  }
+
+
 }
 .site-aside {
   border-right: 1px solid #EEEEEE;
   margin-right: 16px;
-  .site-aside-zhanzu{
+  .site-aside-lanzhou{
     padding-left: 14px;
   }
 
@@ -75,12 +85,12 @@ body {
 .example {
   padding: 16px 0;
 }
-.ands-heiadr{
+.ands-head{
   width: 600px;
-  .ands-zhanzhu{
+  .ands-lanzhou{
 
   }
-  .ands-zhanzhu-img{
+  .ands-lanzhou-img{
     display: flex;
     img{
       width: 200px;
