@@ -4,6 +4,7 @@ import pinyin from "tiny-pinyin"
 import "./citySelect.scss"
 interface Props {
     dataSource: string[];
+    children:string;
     onChange: (p1: string) => void;
 }
 interface Context {

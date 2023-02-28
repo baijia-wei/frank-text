@@ -1,11 +1,8 @@
-import React, { FunctionComponent, useState } from "react";
-import ReactDOM from "react-dom";
+import * as React from 'react';
 import CitySelect from "./citySelect";
 
-interface Props {
 
-}
-const CitySelectExample: FunctionComponent<Props> = (props) => {
+const CitySelectExample:React.FunctionComponent = () => {
     const onChangex = (e:any) => {
         console.log(e);
         

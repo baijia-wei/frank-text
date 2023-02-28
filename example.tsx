@@ -18,15 +18,15 @@ import Hoc from "./lib/guanw/HOC";
 import TreeExample from './lib/tree/tree.example';
 import Scroll from './lib/scroll/scroll.example'
 import MultipleChoice from "./lib/choice/choice.example"
-import dragPull from "./lib/dragPull/drag.example"
-import cityselect from "./lib/citySelect/citySelect.exampie"
-import actionsheet from "./lib/actionSheet/actionsheet.example"
+import DragPull from "./lib/dragPull/drag.example"
+import Cityselect from "./lib/citySelect/citySelect.exampie"
+import Actionsheet from "./lib/actionSheet/actionsheet.example"
 import TabExample from "./lib/Tab/tab.example"
 import TablesExample from "./lib/table/table.example"
 import ReduxExample from "./lib/Redux/index"
 import RadioExample from "./lib/radio/radio"
 import ActivityExample from "./lib/activity/activity"
-import longList from "./lib/longList/longList.example"
+import LongList from "./lib/longList/longList.example"
 import SwitchExample from "./lib/switch/switch.example";
 import { Icon } from './lib';
 const git = require('./lib/icons/GitHub.png');
@@ -37,8 +37,8 @@ import {
 
 
 
-const container = document.querySelector('#root');
-const root = createRoot(container);
+const container= document.querySelector('#root');
+const root = createRoot(container as Element);
 root.render(<Router>
     <Layout className="site-page">
         <Header className="site-header">
@@ -147,22 +147,21 @@ root.render(<Router>
                     <Route path="/ganging" element={<GanYang />} />
                     <Route path="/updated" element={<UpdateLog />} />
                     <Route path="/input" element={<InputExample />} />
-                    {/* <Route path="/hoc"  element={<Hoc name={''} stage={''}/>}/> */}
+                    <Route path="/hoc"  element={<Hoc name={''} stage={''}/>}/>
                     <Route path="/tree" element={<TreeExample />} />
                     <Route path="/scroll" element={<Scroll />} />
                     <Route path="/choice" element={<MultipleChoice />} />
-                    {/* <Route path="/dragpull"  element={<dragPull/>}  />
-                <Route path="/cityselect" element={<cityselect/>}  />
-                <Route path="/actionsheet"  element={<actionsheet/>} /> */}
+                    <Route path="/dragpull"  element={<DragPull/>}  />
+                    <Route path="/cityselect" element={<Cityselect/>}  />
+                    <Route path="/actionsheet"  element={<Actionsheet/>} />
                     <Route path="/tabexample" element={<TabExample />} />
                     <Route path="/tables" element={<TablesExample />} />
                     <Route path="/redux" element={<ReduxExample />} />
                     <Route path="/Radio" element={<RadioExample />} />
                     <Route path="/switch" element={<SwitchExample />} />
                     <Route path="/activity" element={<ActivityExample />} />
-                    {/* <Route path="/longList"   element={<longList/>} /> */}
+                    <Route path="/longList"   element={<LongList/>} />
                 </Routes>
-
             </Content>
         </Layout>
         <Footer className="site-footer">
